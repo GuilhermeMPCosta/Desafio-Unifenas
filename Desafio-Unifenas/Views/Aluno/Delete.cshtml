@@ -1,0 +1,53 @@
+﻿@model Desafio_Unifenas.Models.Aluno
+
+@{
+    ViewData["Title"] = "Deletar";
+}
+
+<h1 style="margin-left: 20rem;color: white;">Deletar</h1>
+
+<h3 style="color: white;margin-left: 20rem;margin-top: 10px;">Você tem certeza disso?</h3>
+<div>
+    <dl class="row" style="display:flex;justify-content:center;margin-top:3rem;background:white;width:31rem;border-radius:8px;height:37rem;margin-left:20rem">
+         <dt class = "col-sm-2" style="align-items: center; display: flex; justify-content: center;">
+            @Html.DisplayNameFor(model => model.Nome)
+        </dt>
+        <dd class = "col-sm-10" style="display: flex; align-items: center;">
+            @Html.DisplayFor(model => model.Nome)
+        </dd>
+         <dt class = "col-sm-2" style="align-items: center; display: flex; justify-content: center;">
+            @Html.DisplayNameFor(model => model.NomedaMae)
+        </dt>
+       <dd class = "col-sm-10" style="display: flex; align-items: center;">
+            @Html.DisplayFor(model => model.NomedaMae)
+        </dd>
+         <dt class = "col-sm-2" style="align-items: center; display: flex; justify-content: center;">
+            @Html.DisplayNameFor(model => model.DataNasc)
+        </dt>
+       <dd class = "col-sm-10" style="display: flex; align-items: center;">
+            @Html.DisplayFor(model => model.DataNasc)
+        </dd>
+        <dt class = "col-sm-2" style="align-items: center; display: flex; justify-content: center;">
+            @Html.DisplayNameFor(model => model.Cpf)
+        </dt>
+       <dd class = "col-sm-10" style="display: flex; align-items: center;">
+            @Html.DisplayFor(model => model.Cpf)
+        </dd>
+        <dt class = "col-sm-2" style="align-items: center; display: flex; justify-content: center;">
+            @Html.DisplayNameFor(model => model.Endereco)
+        </dt>
+       <dd class = "col-sm-10" style="display: flex; align-items: center;">
+            @Html.DisplayFor(model => model.Endereco)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete" style="width: 31rem;margin-left: 20rem;">
+        <input type="hidden" asp-for="Id" />
+        <input type="submit" value="Delete" class="btn btn-danger" />
+        <div class="form-group">
+                 <button style="width: 31rem; background: brown; padding: 1rem;">
+                 <a  style="text-decoration: none; background: brown; border-radius: 4rem; padding: 1rem; margin-top: 23rem; color: white" 
+                       asp-action="Index">Voltar para a lista de alunos</a></button>
+            </div>
+    </form>
+</div>

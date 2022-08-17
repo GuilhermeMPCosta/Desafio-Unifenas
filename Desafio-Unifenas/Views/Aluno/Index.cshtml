@@ -1,0 +1,62 @@
+﻿@model IEnumerable<Desafio_Unifenas.Models.Aluno>
+
+@{
+    ViewData["Title"] = "Alunos";
+}
+
+<div style="justify-content:center;align-items:center;margin:6% 9%;display:flex">
+    <img src="~/Logo_Unifeas_-_Varia__o_400x400.jpg" style="width:30%;height:20%"></img>
+</div>
+
+<table class="table" style="background: white; color: black; border-radius: 8px">
+     
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Nome)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NomedaMae)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DataNasc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Cpf)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Endereco)
+            </th>
+            <th>
+                <button style="width: 12rem; background: antiquewhite;"><a  style="background=#F0F0F0;text-decoration:none" asp-action="Create">Cadastrar novo aluno </a></button>
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nome)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NomedaMae)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DataNasc)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Cpf)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Endereco)
+            </td>
+            <td>
+                
+                <button style="text-decoration:none; border-radius:8px; width: 4rem;background: antiquewhite;"><a asp-action="Edit" asp-route-id="@item.Id">Editar</a></button>
+                <button style="text-decoration:none;border-radius:8px; width: 4rem;background: antiquewhite;"><a asp-action="Details" asp-route-id="@item.Id">Detalhes</a></button>
+                <button style="text-decoration:none;border-radius:8px; width: 4rem;background: antiquewhite;"><a asp-action="Delete" asp-route-id="@item.Id">Deletar</a></button>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
